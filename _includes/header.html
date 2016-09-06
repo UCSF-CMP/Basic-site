@@ -1,0 +1,107 @@
+<!--jekyll-default
+<header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+          <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+END JEKYLL DEFAULT
+-->
+<header>
+  <!-- Side Navigation on click -->
+<nav class="w3-sidenav w3-white w3-card-2 w3-animate-left" style="display:none;z-index:2" id="mySidenav">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav w3-xxxlarge w3-text-teal">Close
+    <i class="fa fa-remove"></i>
+  </a>
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  <a href="#">Link 4</a>
+  <a href="#">Link 5</a>
+</nav>
+
+<!-- Navbar -->
+<div class="w3-top">
+ <ul class="w3-navbar w3-theme-d2 w3-left-align w3-large">
+  <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+    <a class="w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  </li>
+  <li><a href="#" class="w3-teal"><i class="fa fa-home w3-margin-right"></i>Logo</a></li>
+  <li class="w3-hide-small"><a href="#" class="w3-hover-white">Link 1</a></li>
+  <li class="w3-hide-small"><a href="#" class="w3-hover-white">Link 2</a></li>
+  <li class="w3-hide-small w3-dropdown-hover">
+    <a href="#" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></a>
+    <div class="w3-dropdown-content w3-white w3-card-4">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </div>
+  </li>
+  <li class="w3-hide-small w3-right"><a href="#" class="w3-hover-teal" title="Search"><i class="fa fa-search"></i></a></li>
+ </ul>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:43px;">
+  <ul class="w3-navbar w3-left-align w3-large w3-theme">
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+    <li class="w3-dropdown-hover">
+    <a href="#" title="Notifications">Dropdown <i class="fa fa-caret-down"></i></a>
+    <div class="w3-dropdown-content w3-light-grey w3-card-4">
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+    </div>
+  </li>
+  </ul>
+</div>
+
+<!-- Script For Side Navigation -->
+<script>
+function w3_open() {
+    var x = document.getElementById("mySidenav");
+    x.style.width = "300px";
+    x.style.textAlign = "center";
+    x.style.fontSize = "40px";
+    x.style.paddingTop = "10%";
+    x.style.display = "block";
+}
+function w3_close() {
+    document.getElementById("mySidenav").style.display = "none";
+}
+
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</header>
